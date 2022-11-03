@@ -27,6 +27,25 @@ function gameModeSettings(cellNumber, difficoult){
     }
 }
 
+function rndBombs(maxNumber){
+    rndNumber = Math.floor(Math.random() * maxNumber) + 1;
+}
+
+function bombsSpawn(maxNumbers){
+
+    while(bombs.length < 16){
+
+        rndBombs(maxNumbers);
+
+        if(!(bombs.includes(rndNumber))){
+
+            bombs.push(rndNumber);
+
+        }
+    }
+
+}
+
 /*-------------------------------------------------------------
                   FUNCTIONS
 --------------------------------------------------------------*/ 
@@ -40,6 +59,10 @@ const gameTable = document.querySelector(".game-table");
 
 // Dichiarazione difficoltà selezionata
 const gameMode = document.getElementById("game-mode");
+
+let rndNumber;
+
+let bombs = [];
 
 playButton.addEventListener("click", function(){
 
@@ -69,5 +92,3 @@ playButton.addEventListener("click", function(){
     }
 
 });
-
-
