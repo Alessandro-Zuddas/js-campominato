@@ -1,0 +1,114 @@
+/*----------
+  RESET 
+----------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*----------
+  COMMON
+----------*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*----------
+  HEADER
+----------*/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-left{
+    margin-right: .9375rem;
+}
+
+.logo{
+    padding: .9375rem .9375rem;
+}
+
+#game-mode{
+    padding-right: 1.25rem;
+}
+
+.play-btn{
+    padding: .125rem 1.25rem;
+    border-radius: .3125rem;
+    border-color: grey;
+    cursor: pointer;
+}
+
+/*----------
+  MAIN
+----------*/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: #7fffd4;
+}
+
+.game-table{
+    display: flex;
+    flex-wrap: wrap;
+    width: 31.25rem;
+    height: 31.25rem;
+}
+
+.game-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.clicked{
+    background-color: aqua;
+}
+
+/*----------
+  FOOTER
+----------*/
+
+footer{
+    background-color: white;
+}
+
+.copyright{
+    padding-left: .9375rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
