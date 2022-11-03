@@ -73,6 +73,12 @@ main{
     height: 31.25rem;
 }
 
+.game-text{
+    position: absolute;
+    bottom: 10%;
+    font-size: 1.375rem;
+}
+
 .game-number{
     display: flex;
     align-items: center;

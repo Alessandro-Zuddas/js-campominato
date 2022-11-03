@@ -21,10 +21,17 @@ function gameModeSettings(cellNumber, difficoult){
 
             gameCell.classList.add("clicked");
             this.wasClicked = true;
+            gameText.innerHTML = `Il tuo punteggio: ${points++}`
 
         }else if(!this.wasClicked && bombs.includes(Number(this.innerHTML))){
 
             gameCell.classList.add("bomb");
+            gameText.innerHTML = `Hai perso! Il tuo punteggio finale è di: ${points}`;
+            
+            setTimeout(function(){
+                alert("Che peccato! Premi OK per riprovare!");
+                window.location.reload();
+            }, 200);
 
         }
 
@@ -70,6 +77,9 @@ const gameTable = document.querySelector(".game-table");
 // Dichiarazione difficoltà selezionata
 const gameMode = document.getElementById("game-mode");
 
+// Dichiarazione testo di gioco
+const gameText = document.querySelector(".game-text");
+
 // Variabile per contenere il numero estratto randomicamente
 let rndNumber;
 
@@ -78,6 +88,9 @@ let bombs = [];
 
 // Booleano per capire lo stato della cella
 let wasClicked = false;
+
+// Contatore per il punteggio
+let points = 1;
 
 playButton.addEventListener("click", function(){
 
