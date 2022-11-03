@@ -78,6 +78,7 @@ main{
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    cursor: crosshair;
 }
 
 .easy{
@@ -97,6 +98,10 @@ main{
 
 .clicked{
     background-color: aqua;
+}
+
+.bomb{
+    background-color: red;
 }
 
 /*----------
