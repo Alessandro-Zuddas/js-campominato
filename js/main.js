@@ -17,6 +17,37 @@ function gameModeSettings(cellNumber, difficoult){
 
     gameCell.addEventListener("click", function(){
 
+        // Condizioni di vittoria del gioco
+        if(difficoult === "easy"){
+            if(points === 84){
+                gameText.innerHTML = `Complimenti hai vinto! Il tuo punteggio finale è di: ${points}`;
+
+                setTimeout(function(){
+                    alert("Bravissimo! Premi OK per riprovare ad una difficoltà superiore!");
+                    window.location.reload();
+                }, 200);
+            }
+        }else if(difficoult === "medium"){
+            if(points === 65){
+                gameText.innerHTML = `Complimenti hai vinto! Il tuo punteggio finale è di: ${points}`;
+
+                setTimeout(function(){
+                    alert("Bravissimo! Premi OK per riprovare ad una difficoltà superiore!");
+                    window.location.reload();
+                }, 200);
+            }
+        }else if(difficoult === "hard"){
+            if(points === 33){
+                gameText.innerHTML = `Complimenti hai vinto! Il tuo punteggio finale è di: ${points}`;
+
+                setTimeout(function(){
+                    alert("Sei il migliore! Hai vinto alla difficoltà massima!");
+                    window.location.reload();
+                }, 200);
+            }
+        }
+
+        // Condizioni per capire se è un punto o una bomba
         if(!this.wasClicked && !bombs.includes(Number(this.innerHTML))){
 
             gameCell.classList.add("clicked");
@@ -25,8 +56,9 @@ function gameModeSettings(cellNumber, difficoult){
 
         }else if(!this.wasClicked && bombs.includes(Number(this.innerHTML))){
 
-            gameCell.classList.add("bomb");
             gameText.innerHTML = `Hai perso! Il tuo punteggio finale è di: ${points}`;
+
+            gameCell.classList.add("bomb");
             
             setTimeout(function(){
                 alert("Che peccato! Premi OK per riprovare!");
@@ -104,7 +136,6 @@ playButton.addEventListener("click", function(){
 
         // Spawn Bombe
         bombsSpawn(100);
-        console.log(bombs);
 
     }else if(gameMode.value === "medium"){
 
@@ -116,7 +147,6 @@ playButton.addEventListener("click", function(){
 
         // Spawn Bombe
         bombsSpawn(81);
-        console.log(bombs);
 
     }else if(gameMode.value === "hard"){
 
@@ -128,7 +158,6 @@ playButton.addEventListener("click", function(){
 
         // Spawn Bombe
         bombsSpawn(49);
-        console.log(bombs);
     }
 
 });
