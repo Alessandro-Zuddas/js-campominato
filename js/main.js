@@ -56,18 +56,25 @@ function gameModeSettings(cellNumber, difficoult){
 
         }else if(!this.wasClicked && bombs.includes(Number(this.innerHTML))){
 
-            gameText.innerHTML = `Hai perso! Il tuo punteggio finale è di: ${points}`;
+            for (let i = 0; i < bombs.length; i++) {               
+                
+            document.querySelector(`.game-number:nth-child(${bombs[i]})`).classList.add("bomb");
+                
+            }
 
-            gameCell.classList.add("bomb");
-            
+            // Gestione Game Over
+            gameText.innerHTML = `Hai perso! Il tuo punteggio finale è di: ${points}`;  
+
             setTimeout(function(){
                 alert("Che peccato! Premi OK per riprovare!");
                 window.location.reload();
             }, 200);
-
+     
         }
 
     });
+
+    cells.push(Number(gameCell.innerHTML));
 
     gameTable.append(gameCell);
 
@@ -115,6 +122,8 @@ const gameText = document.querySelector(".game-text");
 // Variabile per contenere il numero estratto randomicamente
 let rndNumber;
 
+let cells = [];
+
 // Array dei numeri random
 let bombs = [];
 
@@ -161,5 +170,3 @@ playButton.addEventListener("click", function(){
     }
 
 });
-
-
